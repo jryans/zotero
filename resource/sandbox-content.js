@@ -25,9 +25,13 @@
 
 "use strict";
 
+(() => {
+
 class Example {
 	parseAsync() {
 	}
 }
 
 this.Example = Example;
+
+})();
