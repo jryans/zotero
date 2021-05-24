@@ -71,4 +71,4 @@ jobs:
           dpl --provider=s3 --bucket=zotero-download --local-dir=build-zip --upload-dir=ci/client --acl=public-read --skip_cleanup=true
       
       - name: Run tests
-        run: xvfb-run test/runtests.sh -x firefox-x86_64/firefox -f
+        run: xvfb-run test/runtests.sh -x firefox-x86_64/firefox -b -d 3 -f sandboxTest.js

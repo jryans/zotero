@@ -116,6 +116,7 @@ const xpcomFilesLocal = [
 	'report',
 	'retractions',
 	'router',
+	'sandbox',
 	'schema',
 	'server',
 	'streamer',
