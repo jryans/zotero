@@ -36,7 +36,13 @@ Zotero.sandboxTest = function() {
 		debug: Components.utils.exportFunction(Zotero.debug, sandbox),
 	};
 
-	Services.scriptloader.loadSubScript("resource://zotero/sandbox-content.js", sandbox);
+	Services.scriptloader.loadSubScriptWithOptions(
+		"resource://zotero/sandbox-content.js",
+		{
+			target: sandbox,
+			ignoreCache: true,
+		},
+	);
 	
 	return sandbox.Example;
 };
