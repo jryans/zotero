@@ -28,8 +28,9 @@
 Zotero.sandboxTest = function() {
 	const hiddenWindow = Cc["@mozilla.org/appshell/appShellService;1"]
 		.getService(Ci.nsIAppShellService).hiddenDOMWindow;
-	const sandbox = new Cu.Sandbox(hiddenWindow, {
-		sandboxPrototype: hiddenWindow,
+	const newWindow = hiddenWindow.openDialog("chrome://browser/content/browser.xul", "", "all,height=700,width=1000");
+	const sandbox = new Cu.Sandbox(newWindow, {
+		sandboxPrototype: newWindow,
 		sandboxName: "Sandbox Test",
 	});
 	sandbox.Zotero = {
