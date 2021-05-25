@@ -3,7 +3,7 @@
 
     Copyright © 2021 Corporation for Digital Scholarship
                      Vienna, Virginia, USA
-                     https://digitalscholar.org
+                     https://www.zotero.org
 
     This file is part of Zotero.
 
@@ -25,18 +25,9 @@
 
 "use strict";
 
-Zotero.sandboxTest = function() {
-	const hiddenWindow = Cc["@mozilla.org/appshell/appShellService;1"]
-		.getService(Ci.nsIAppShellService).hiddenDOMWindow;
-	const sandbox = new Cu.Sandbox(hiddenWindow, {
-		sandboxPrototype: hiddenWindow,
-		sandboxName: "Sandbox Test",
-	});
-	sandbox.Zotero = {
-		debug: Components.utils.exportFunction(Zotero.debug, sandbox),
-	};
+class Example {
+	parseAsync() {
+	}
+}
 
-	Services.scriptloader.loadSubScript("chrome://zotero/content/sandbox-content.js", sandbox);
-	
-	return sandbox.Example;
-};
+window.Example = Example;
